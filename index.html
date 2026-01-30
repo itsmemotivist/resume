@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satish Kumar - Professional Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c5aa0;
+            --secondary-color: #3a7bd5;
+            --accent-color: #f8b739;
+            --light-color: #f5f7fa;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --gray-color: #6c757d;
+            --border-radius: 8px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .resume-container {
+            background-color: white;
+            width: 100%;
+            max-width: 1000px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .resume-header {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .header-left h1 {
+            font-size: 36px;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        
+        .header-left .title {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-item i {
+            width: 20px;
+            color: var(--accent-color);
+        }
+        
+        .controls {
+            background-color: var(--light-color);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+        
+        .btn-edit {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-edit:hover {
+            background-color: #1a4a8a;
+        }
+        
+        .btn-print {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+        }
+        
+        .btn-print:hover {
+            background-color: #e6a328;
+        }
+        
+        .btn-pdf {
+            background-color: #28a745;
+            color: white;
+        }
+        
+        .btn-pdf:hover {
+            background-color: #1e7e34;
+        }
+        
+        .edit-notice {
+            background-color: #e8f4ff;
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .resume-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 0;
+        }
+        
+        .main-content {
+            padding: 30px;
+        }
+        
+        .sidebar {
+            background-color: #f9fafc;
+            padding: 30px;
+            border-left: 1px solid #eaeaea;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-size: 20px;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title i {
+            color: var(--accent-color);
+        }
+        
+        .summary-text {
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        .experience-item {
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 20px;
+            border-left: 3px solid #eaeaea;
+        }
+        
+        .experience-item:hover {
+            border-left-color: var(--secondary-color);
+        }
+        
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            flex-wrap: wrap;
+        }
+        
+        .exp-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .exp-company {
+            color: var(--secondary-color);
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+        
+        .exp-duration {
+            background-color: var(--light-color);
+            color: var(--gray-color);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .exp-tag {
+            display: inline-block;
+            background-color: rgba(44, 90, 160, 0.1);
+            color: var(--primary-color);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+        
+        .exp-details {
+            margin-top: 10px;
+        }
+        
+        .exp-details ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .exp-details li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+        }
+        
+        .exp-details li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .skill-item {
+            background-color: white;
+            border: 1px solid #eaeaea;
+            border-radius: var(--border-radius);
+            padding: 12px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .skill-item:hover {
+            border-color: var(--secondary-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transform: translateY(-3px);
+        }
+        
+        .skill-name {
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+        
+        .skill-level {
+            height: 4px;
+            background-color: #eaeaea;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .skill-level-bar {
+            height: 100%;
+            background-color: var(--secondary-color);
+        }
+        
+        .personal-info-item {
+            display: flex;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed #eaeaea;
+        }
+        
+        .personal-info-label {
+            font-weight: 600;
+            color: var(--dark-color);
+            min-width: 120px;
+        }
+        
+        .project-item {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #eaeaea;
+            transition: all 0.3s;
+        }
+        
+        .project-item:hover {
+            border-color: var(--secondary-color);
+        }
+        
+        .project-title {
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .project-tech {
+            font-size: 12px;
+            color: var(--gray-color);
+            font-style: italic;
+        }
+        
+        .project-desc {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .achievement-item {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .achievement-icon {
+            background-color: rgba(44, 90, 160, 0.1);
+            color: var(--primary-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .achievement-content h4 {
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+        
+        .achievement-content p {
+            font-size: 14px;
+            color: var(--gray-color);
+        }
+        
+        .education-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #eaeaea;
+        }
+        
+        .education-degree {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .education-institution {
+            color: var(--secondary-color);
+        }
+        
+        /* Editable styles */
+        .editable {
+            padding: 2px 4px;
+            border-radius: 3px;
+            transition: all 0.2s;
+            outline: none;
+        }
+        
+        .editable:hover {
+            background-color: rgba(44, 90, 160, 0.05);
+        }
+        
+        .editable:focus {
+            background-color: #fff9e6;
+            box-shadow: 0 0 0 2px rgba(248, 183, 57, 0.3);
+        }
+        
+        /* Print styles for A4 */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+                font-size: 12px;
+                line-height: 1.4;
+            }
+            
+            .resume-container {
+                box-shadow: none;
+                border-radius: 0;
+                max-width: 100%;
+                margin: 0;
+                page-break-inside: avoid;
+            }
+            
+            .controls {
+                display: none;
+            }
+            
+            .btn {
+                display: none;
+            }
+            
+            .edit-notice {
+                display: none;
+            }
+            
+            .resume-header {
+                padding: 15px;
+                page-break-inside: avoid;
+            }
+            
+            .main-content, .sidebar {
+                padding: 15px;
+            }
+            
+            .section {
+                margin-bottom: 20px;
+                page-break-inside: avoid;
+            }
+            
+            .experience-item {
+                margin-bottom: 15px;
+                page-break-inside: avoid;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            
+            .skill-item {
+                padding: 8px;
+                margin-bottom: 5px;
+                page-break-inside: avoid;
+            }
+            
+            .project-item {
+                page-break-inside: avoid;
+            }
+            
+            .editable:hover, .editable:focus {
+                background-color: transparent;
+                box-shadow: none;
+            }
+            
+            /* A4 specific sizing */
+            @page {
+                size: A4;
+                margin: 15mm;
+            }
+            
+            /* Prevent content from breaking across pages inappropriately */
+            h2, h3 {
+                page-break-after: avoid;
+                page-break-inside: avoid;
+            }
+            
+            ul, ol {
+                page-break-inside: avoid;
+            }
+            
+            .declaration-content {
+                page-break-inside: avoid;
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .resume-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                border-left: none;
+                border-top: 1px solid #eaeaea;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .resume-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            
+            .controls {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+            
+            .exp-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .exp-duration {
+                align-self: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <div class="resume-header">
+            <div class="header-left">
+                <h1>Satish Kumar</h1>
+                <div class="title">Mathematics Teacher & Educational Administrator</div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 9992340876</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>swtksrs126@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Sirsa, Haryana, India</span>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="contact-item">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>M.Sc Mathematics</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>7+ Years Teaching Experience</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="resume-content">
+            <div class="main-content">
+                <section class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Professional Summary</span>
+                    </h2>
+                    <p class="summary-text">
+                        Dedicated educator and administrator with 7+ years of combined experience in teaching and educational administration, specializing in CBSE curriculum implementation. Proven expertise in managing comprehensive CBSE portal operations including UDISE, OASIS, and other critical systems.
+                    </p>
+                </section>
+                
+                <section class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Professional Experience</span>
+                    </h2>
+                    
+                    <div class="experience-item">
+                        <div class="exp-header">
+                            <div>
+                                <h3 class="exp-title">Office Administrator & CBSE Coordinator</h3>
+                                <div class="exp-company">Dayanand Sr. Sec. School, Nathusari Chopta, Sirsa</div>
+                            </div>
+                            <div class="exp-duration">2018 - Present</div>
+                        </div>
+                        <div class="exp-tag">Full-Time</div>
+                        <div class="exp-details">
+                            <ul>
+                                
+                                <li>Expertly handled CBSE portal operations including UDISE, OASIS, SARAS, and other mandatory reporting systems</li>
+                                <li>Coordinated with CBSE board for examination registrations, result processing, and certificate issuance</li>
+                                <li>Performed computer operator duties including data entry, document preparation, record maintenance, and report generation</li>
+                               
+                                <li>Supervised daily office operations including student admissions, records management, and correspondence</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="exp-header">
+                            <div>
+                                <h3 class="exp-title">Mathematics Teacher</h3>
+                                <div class="exp-company">Dayanand Senior Secondary School, Nathusari Chhota</div>
+                            </div>
+                            <div class="exp-duration">2014 - 2019, 2021 - Present</div>
+                        </div>
+                        <div class="exp-tag">Full-Time Teaching with Administrative Duties</div>
+                        <div class="exp-details">
+                            <ul>
+                                <li class="editable" contenteditable="true">Taught Mathematics to students of classes 7 to 10 following CBSE curriculum</li>
+                                <li class="editable" contenteditable="true">Managed and operated the school's management system software for student data, results, and administrative functions</li>
+                                <li class="editable" contenteditable="true">Used digital tools and visual methods to make complex mathematics concepts easier to understand</li>
+                                <li class="editable" contenteditable="true">Handled CBSE-related administrative work including student registration and result processing</li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="exp-header">
+                            <div>
+                                <h3 class="exp-title">Mathematics Teacher</h3>
+                                <div class="exp-company">Bhovisha International School, Gigorani</div>
+                            </div>
+                            <div class="exp-duration">2019 - 2021</div>
+                        </div>
+                        <div class="exp-tag">Teaching Position</div>
+                        <div class="exp-details">
+                            <ul>
+                                <li class="editable" contenteditable="true">Taught Mathematics to secondary school students following CBSE curriculum</li>
+                                <li class="editable" contenteditable="true">Developed innovative lesson plans incorporating real-world applications of mathematical concepts</li>
+                                <li class="editable" contenteditable="true">Collaborated with administration to streamline student assessment tracking and reporting systems</li>
+                                <li class="editable" contenteditable="true">Participated in parent-teacher meetings and academic planning sessions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="exp-header">
+                            <div>
+                                <h3 class="exp-title">Full Stack Web Developer</h3>
+                                <div class="exp-company">Self-Employed / Freelance</div>
+                            </div>
+                            <div class="exp-duration">2020 - Present</div>
+                        </div>
+                        <div class="exp-tag">Part-Time</div>
+                        <div class="exp-details">
+                            <ul>
+                                <li class="editable" contenteditable="true">Develop and deploy responsive web applications using HTML, CSS, JavaScript, PHP</li>
+                                <li class="editable" contenteditable="true">Created 10+ projects including e-commerce platforms, task management systems, and portfolio websites</li>
+                               
+                                <li class="editable" contenteditable="true">Implemented responsive designs with modern CSS frameworks and optimized application performance</li>
+                                <li class="editable" contenteditable="true">This part-time work complements my teaching career by keeping me updated with technological advancements</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-certificate"></i>
+                        <span>Professional Declaration</span>
+                    </h2>
+                    <div class="declaration-content">
+                        <p style="text-align: justify; line-height: 1.8; margin-bottom: 30px;">
+                            I hereby declare that all the information provided above is true to the best of my knowledge. I am a dedicated mathematics teacher committed to educational excellence and student success.
+                        </p>
+                        <div style="text-align: right; margin-top: 40px;">
+                            <p style="margin-bottom: 5px;"><strong>Signature:</strong> _________________</p>
+                            <p><strong>Name:</strong> Satish Kumar</p>
+                            <p><strong>Date:</strong> _________________</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="sidebar">
+                <section class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-cogs"></i>
+                        <span>Skills & Competencies</span>
+                    </h2>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-name editable" contenteditable="true">CBSE Administration</div>
+                            <div class="skill-level">
+                                <div class="skill-level-bar" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name editable" contenteditable="true">Mathematics Instruction</div>
+                            <div class="skill-level">
+                                <div class="skill-level-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name editable" contenteditable="true">HTML/CSS/JS</div>
+                            <div class="skill-level">
+                                <div class="skill-level-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name editable" contenteditable="true">PHP Development</div>
+                            <div class="skill-level">
+                                <div class="skill-level-bar" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name editable" contenteditable="true">School Management Systems</div>
+                            <div class="skill-level">
+                                <div class="skill-level-bar" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name editable" contenteditable="true">MS Office Suite</div>
+                            <div class="skill-level">
+                                <div class="skill-level-bar" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Personal Details</span>
+                    </h2>
+                    <div class="personal-info-item">
+                        <div class="personal-info-label">Father's Name:</div>
+                        <div class="editable" contenteditable="true">Sh. Om Parkash</div>
+                    </div>
+                    <div class="personal-info-item">
+                        <div class="personal-info-label">Date of Birth:</div>
+                        <div class="editable" contenteditable="true">20-05-1987</div>
+                    </div>
+                    <div class="personal-info-item">
+                        <div class="personal-info-label">Gender:</div>
+                        <div class="editable" contenteditable="true">Male</div>
+                    </div>
+                    <div class="personal-info-item">
+                        <div class="personal-info-label">Marital Status:</div>
+                        <div class="editable" contenteditable="true">Married</div>
+                    </div>
+                    <div class="personal-info-item">
+                        <div class="personal-info-label">Nationality:</div>
+                        <div class="editable" contenteditable="true">Indian</div>
+                    </div>
+                    <div class="personal-info-item">
+                        <div class="personal-info-label">Category:</div>
+                        <div class="editable" contenteditable="true">OBC</div>
+                    </div>
+                    <div class="personal-info-item">
+                        <div class="personal-info-label">Languages:</div>
+                        <div class="editable" contenteditable="true">Hindi, English, Punjabi</div>
+                    </div>
+                </section>
+                
+                <section class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Education</span>
+                    </h2>
+                    <div class="education-item">
+                        <div class="education-degree editable" contenteditable="true">M.Sc (Mathematics)</div>
+                        <div class="education-institution editable" contenteditable="true">Kurukshetra University (K.U.K)</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-degree editable" contenteditable="true">Bachelor's Degree</div>
+                        <div class="education-institution editable" contenteditable="true">Kurukshetra University (K.U.K)</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-degree editable" contenteditable="true">Senior Secondary (12th)</div>
+                        <div class="education-institution editable" contenteditable="true">Board of School Education Haryana (B.S.E.H)</div>
+                    </div>
+                </section>
+                
+                <section class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>Technical Projects</span>
+                    </h2>
+                    <div class="project-item">
+                        <div class="project-title">
+                            <span class="editable" contenteditable="true">E-commerce Website</span>
+                            <span class="project-tech editable" contenteditable="true">PHP, HTML, CSS, JS</span>
+                        </div>
+                        <p class="project-desc editable" contenteditable="true">Complete e-commerce platform with user registration, product catalog, shopping cart, and payment gateway integration</p>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-title">
+                            <span class="editable" contenteditable="true">School Management Website</span>
+                            <span class="project-tech editable" contenteditable="true">PHP, JavaScript, MySQL</span>
+                        </div>
+                        <p class="project-desc editable" contenteditable="true">Comprehensive school website with student portal, faculty section, notice board, and result display system</p>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-title">
+                            <span class="editable" contenteditable="true">Portfolio Website</span>
+                            <span class="project-tech editable" contenteditable="true">HTML, CSS, JavaScript</span>
+                        </div>
+                        <p class="project-desc editable" contenteditable="true">Responsive portfolio website with custom animations, contact form, and project showcase</p>
+                    </div>
+                </section>
+                
+                <section class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-heart"></i>
+                        <span>Interests</span>
+                    </h2>
+                    <p class="editable" contenteditable="true">Technology Trends, Web Development, Reading Educational Materials, Mathematics Problem Solving, Learning New Teaching Methods</p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+            </body>
+</html>
